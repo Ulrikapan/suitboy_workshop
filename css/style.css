@@ -280,31 +280,38 @@ section {
       -ms-transform: translate(-50%, -25%);
       transform: translate(-50%, -25%);
       z-index: 100; }
-  #section_product .section_header .tabs-nav * {
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box; }
-  #section_product .section_header .tabs-nav li {
-    border-right: 1px solid #9D9499;
-    display: inline-block;
-    width: calc(100% / 4); }
-    #section_product .section_header .tabs-nav li:last-child {
-      border-right: 0px; }
-    #section_product .section_header .tabs-nav li.ui-tabs-active a {
-      color: #fff;
-      z-index: 11; }
-    #section_product .section_header .tabs-nav li a {
-      width: 100%;
-      padding: 8px 0px;
-      font-size: 16px;
-      text-align: center;
-      display: block; }
-      #section_product .section_header .tabs-nav li a:hover {
-        color: #494448; }
-      #section_product .section_header .tabs-nav li a:focus {
-        outline: none; }
+  #section_product .section_header {
+    width: 100%;
+    max-width: 1170px;
+    margin: 0 auto; }
+    #section_product .section_header .tabs-nav * {
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box; }
+    #section_product .section_header .tabs-nav li {
+      border-right: 1px solid #9D9499;
+      display: inline-block;
+      width: calc(100% / 4); }
+      #section_product .section_header .tabs-nav li:last-child {
+        border-right: 0px; }
+      #section_product .section_header .tabs-nav li.ui-tabs-active a {
+        color: #fff;
+        z-index: 11; }
+      #section_product .section_header .tabs-nav li a {
+        width: 100%;
+        padding: 8px 0px;
+        font-size: 16px;
+        text-align: center;
+        display: block; }
+        #section_product .section_header .tabs-nav li a:hover {
+          color: #494448; }
+        #section_product .section_header .tabs-nav li a:focus {
+          outline: none; }
   #section_product .section_body {
     height: 500px;
-    border: 1px solid #9D9499; }
+    border: 1px solid #9D9499;
+    width: 100%;
+    max-width: 1170px;
+    margin: 0 auto; }
     #section_product .section_body .tabs-panel {
       height: 100%;
       overflow: hidden; }
