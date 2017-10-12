@@ -1,0 +1,584 @@
+$color_primary: #9D9499
+$color_secondary: #9D8879
+
+body
+  margin: 0
+  padding: 0
+  overflow: scroll
+  font-size: 0px
+*
+  font-family: 'Open Sans Condensed', serif
+  position: relative
+a
+  text-decoration: none
+  color: $color_primary
+ul
+  padding: 0
+
+// 文字定義
+h1
+  font-size: 48px
+h2
+  font-size: 40px
+h3
+  font-size: 32px
+h4
+  font-size: 24px
+h5, p
+  font-size: 16px
+h6
+  font-size: 12px 
+
+//-------------------------
+// 共用
+
+.pc_show
+  @media screen and (min-width: 575px)
+    display: block
+  @media screen and (max-width: 575px)
+    display: none
+.m_show
+  @media screen and (min-width: 575px)
+    display: none
+  @media screen and (max-width: 575px)
+    display: block
+
+//-------------------------
+.page-header
+  font-size: 0px
+.slideshow
+  height: 90vh
+  overflow: hidden
+
+// --------------------------
+.logo
+  position: fixed
+  z-index: 200
+  height: 150px
+  width: 100%
+  text-align: center
+  transition: .3s ease-in-out
+  
+  &:before
+    content: ''
+    // width: 210px
+    // height: 150px
+    // border-radius: 50%
+    // background-color: $color_primary
+    // position: absolute
+    // left: 50%
+    // transform: translate(-50%,-60%)
+    // box-shadow: 0px 0px 20px rgba(0,0,0,.5)
+    position: absolute
+    left: 50%
+    transform: translateX(-50%) skewX(-15deg)
+    box-shadow: 0px 0px 20px rgba(0,0,0,.5), -10px 10px 0px $color_primary
+    background-color: #fff
+    width: 180px
+    height: 60px
+
+
+
+  h3
+    font-size: 32px
+    font-weight: 100
+    padding: 0
+    margin: 0
+    position: absolute
+    left: 50%
+    transform: translate(-50%, 5px)
+    color: #fff
+    color: $color_primary
+.slideshow-slides
+  height: 100%
+  width: 100%
+  white-space: nowrap
+  position: absolute
+
+  .slide
+    height: 100%
+    width: 100%
+    display: inline-block
+    overflow: hidden
+    &:after
+      content: ''
+      position: absolute
+      width: 100%
+      height: 100%
+      left: 0
+      top: 0
+      background-color: rgba(0,0,0,0.3)
+    img
+      left: 50%
+      margin-left: -50%
+      width: 100%
+      
+@media screen and (max-width:800px)
+  .slideshow-slides
+    .slide
+      img
+        width: auto
+        height: 100%
+@media screen and (max-width:480px)
+  .slideshow-slides
+    .slide
+      img      
+        margin-left: -100%
+// --------------------------
+
+.slideshow-content
+  // border: 1px solid red
+  color: #fff
+  // height: 100%
+  position: absolute
+  left: 50%
+  top: 50%
+  transform: translate(-50%, -50%)
+  h2, p
+    text-align: center
+  h2
+    text-transform: uppercase
+    color: #fff
+    text-shadow: 0px 0px 10px rgba(0,0,0,.3) ,-3px 3px 0px $color_primary
+  p
+    font-style: italic
+    letter-spacing: 1.5px
+
+
+// --------------------------
+.slideshow-nav
+  top: 50%
+  left: 50%
+  // height: 100%
+  width: 90vw
+  transform: translate(-50%,-450%)
+  // padding-top: 70vh
+
+  a
+    font-size: 50px
+    text-decoration: none
+    color: rgba(255,255,255,0.4)
+    text-align: center
+    line-height: 100px
+    position: absolute
+    width: 60px
+    height: 100px
+    background-color: rgba(255,255,255,0)
+    &.prev
+      left: 10px
+    &.next
+      right: 10px
+    &:hover
+      color: rgba(255,255,255,0.8)
+      background-color: rgba(255,255,255,0.1)
+      
+    // 用來判斷第一張與最後一張，顯示與否
+    &.disabled
+      display: none
+
+// --------------------------
+.slideshow-indicator
+  position: absolute
+  bottom: 0px
+  height: 30px
+  width: 100%
+  text-align: center
+  a
+    width: 16px
+    height: 100%
+    display: inline-block
+    margin: 0 1px 0 1px
+    background-color: rgba(255,255,255,0.5)
+    transition: .3s ease-in-out
+    bottom: -70%
+    &.active
+      cursor: default
+      bottom: -20%
+      background-color: rgba(255,255,255,1)
+      
+      
+// nav---------------------
+.primary-nav
+  box-sizing: border-box
+  height: 10vh
+  margin: 0
+  background-color: rgba(#fff,.7)
+  z-index: 100
+  transition: .3s ease-in
+  ul
+    list-style: none
+    padding: 0
+    height: 10vh
+    line-height: 10vh
+    transition: .3s ease-in
+    li
+      display: inline-block
+      height: 100%
+      a
+        text-align: center
+        color: $color_primary
+        font-size: 24px
+        text-decoration: none
+        display: block
+        width: calc( 100vw / 4)
+        height: 100%
+        @media screen and (max-width:480px)
+          font-size: 18px
+        &:hover
+          color: #fff
+          background-color: $color_primary
+        
+.primary-nav.sticky
+  position: fixed
+  top: 0
+  border-bottom: 1px solid $color_primary
+  height: auto
+  ul
+    height: 8vh
+    line-height: 8vh
+        
+        
+// section------------------
+section
+  padding: 50px 10px
+  h2.title
+    text-align: center
+    font-size: 32px
+    letter-spacing: 1.5px
+    font-weight: normal
+    
+// section_about-----------
+#section_about
+  background-color: $color_primary
+  color: #fff
+  .about_content
+    text-align: center
+    margin: 0 auto
+    width: 70%
+    max-width: 600px
+    p
+      font-size: 16px
+      font-weight: 200
+      text-align: center
+      padding: 10px 0px
+      
+// section_product-----------
+#section_product
+  height: auto
+  .title
+    color: $color_primary
+  .tabs-hightlight
+    background-color: $color_primary
+    height: 100%
+    bottom: 0
+    position: absolute
+    width: calc(100% / 4)
+    z-index: 10
+    &:after
+      content: ''
+      width: 0
+      height: 0
+      border-style: solid
+      border-width: 15px 10px 0 10px
+      border-color: $color_primary transparent transparent transparent
+      position: absolute
+      left: 50%
+      bottom: -50%
+      transform: translate(-50%,-25%)
+      z-index: 100
+      
+  .section_header
+    .tabs-nav
+      *
+        box-sizing: border-box
+      li
+        border-right: 1px solid $color_primary
+        display: inline-block
+        width: calc(100% / 4)
+        &:last-child
+          border-right: 0px
+        &.ui-tabs-active
+          a
+            color: #fff
+            z-index: 11
+        a
+          width: 100%
+          padding: 8px 0px
+          font-size: 16px
+          text-align: center
+          display: block
+          &:hover
+            color: #494448
+          &:focus
+            outline: none
+
+  .section_body
+    height: 500px
+    border: 1px solid $color_primary
+
+    .tabs-panel
+      height: 100%
+      overflow: hidden
+    .image-wrapper
+      height: 100%
+      min-width: 960px
+      overflow: hidden
+      position: absolute
+      width: 100%
+      // img
+      //   opacity: 0
+
+    .product-content 
+      position: absolute
+      width: 50%
+      max-width: 450px
+      height: auto
+      background-color: rgba(#000,0.5)
+      padding: 20px
+
+      .title
+        font-size: 24px
+        color: #eee
+        padding: 0
+        margin: 0
+      .description
+        padding: 0
+        font-size: 16px
+        color: #bbb
+      .product-btn
+        font-size: 16px
+        cursor: pointer
+        border: 1px solid #eee
+        background-color: transparent
+        color: #eee
+        padding: 5px 20px
+        float: right
+        right: 0px
+        &:hover
+          background-color: #eee
+          color: #aaa
+#section_product .section_body .tabs-panel#product1
+  .product-content
+    right: 30px
+    bottom: 30px 
+#section_product .section_body .tabs-panel#product2
+  .product-content
+    right: 30px
+    bottom: 30px
+#section_product .section_body .tabs-panel#product3
+  .product-content
+    left: 30px
+    bottom: 30px
+#section_product .section_body .tabs-panel#product4
+  .product-content
+    left: 30px
+    bottom: 30px 
+
+// section_custom ----------
+#section_custom
+  background-color: $color_primary
+  color: #fff
+  .custom_list
+    .custom_item
+      text-align: center
+      margin-bottom: 80px
+      .custom_item_title
+        color: $color_primary
+        margin-bottom: 30px
+        background-color: #FFF
+        font-weight: normal
+        font-style: italic
+        // transform: skewX(10deg)
+        &:before, &:after
+          content: ''
+          position: absolute
+          width: 0
+          height: 0
+          border-style: solid
+          border-width: 35px 10px 0 0 
+          border-color: transparent #9d9399 transparent transparent 
+          top: 0
+        &:before
+          right: 0
+        &:after
+          transform: rotate(180deg)
+          left: 0
+      .custom_item_imgbox
+        padding-top: 190px
+        width: 100%
+        margin-bottom: 20px
+        overflow: hidden
+        box-shadow: -8px 8px 0px #fff
+
+        img
+          position: absolute
+          left: 0
+          bottom: 0
+          width: 120%
+          height: auto
+        @media screen and (max-width: 991px) and (min-width: 468px)
+          padding-top: 300px
+
+      .cta-btn
+        text-decoration: none
+        cursor: pointer
+        display: block
+        margin-top: 20px
+        color: #fff
+        font-size: 14px
+        padding: 10px 20px
+        border: 1px solid #fff
+        transition: all .3s ease-in-out
+        &:hover
+          background-color: #fff
+          color: $color_primary
+
+@media screen and (max-width: 990px)
+  section.section_custom
+    padding-bottom: 50px
+    .title
+      padding: 80px 20px 40px 20px
+      p.long
+        display: none
+      p.short
+        display: block
+    .custom_list
+      .custom_item
+        .custom_item_imgbox
+          padding-top: 200px
+// section_contact-----------
+#section_contact
+  background-color: #fff
+  color: $color_primary
+  width: 70%
+  max-width: 600px
+  margin: 0 auto
+  p
+    font-size: 16px
+    color: $color_primary
+    text-align: center
+    padding: 0 0 10px 0
+    margin-top: -20px
+  .form input.btn
+    cursor: pointer
+    color: $color_primary
+    border: 1px solid $color_primary
+    border-radius: 0
+    font-size: 16px
+    font-weight: 300
+    margin: 0 auto
+    display: block
+    padding: 12px 48px
+    &:hover
+      background-color: $color_primary
+      color: #fff
+
+// form
+.form
+  text-align: center
+  padding: 10px 0
+.form input,.form select, .form textarea
+  padding: 8px 8px
+  display: inline-block
+  border: 1px solid #ccc
+  background-color: #fff
+  color: #666
+  vertical-align: middle
+  box-sizing: border-box
+  width: 100%
+  margin-bottom: 40px
+.form input:focus,.form select:focus, .form textarea:focus
+  outline: 0
+  border: 2px solid #FEAB98
+
+.form .label-text
+  color: $color_primary
+  font-size: 16px
+  font-weight: 200
+  position: absolute
+  left: 0
+  top: 0
+  margin: 10px 20px
+  transition: all 0.3s
+.form .label-text.is-active
+  color: #FEAB98
+  font-weight: 300
+  margin: 0px
+  top: -25px
+  font-size: 12px
+.form textarea
+  min-height: 250px
+  resize: none
+
+    
+    
+    
+// footer start -------------
+#footer
+  font-size: 16px
+  background-color: $color_primary
+  .top_icon_bg
+    background-color: #fff
+  .top_icon
+    text-align: center
+    font-size: 24px
+    
+    height: 50px
+    width: 50px
+    left: 50%
+    transform: translate(-50%, 0%)
+    background-color: #fff
+    cursor: pointer
+    i
+      width: 50px
+      height: 50px
+      border-radius: 50%
+      transform: translateY(50%)
+      color: rgba(255,255,255,.5)
+      &:hover
+        color: rgba(255,255,255,1)
+      a
+        display: block
+        position: absolute
+        width: 100%
+        height: 100%
+        border-radius: 50%
+        bottom: 0px
+        cursor: pointer
+        
+        
+        
+      
+        
+    &:before
+      content: ''
+      width: 50px
+      height: 50px
+      border-radius: 50%
+      background-color: $color_primary
+      position: absolute
+      left: 50%
+      transform: translate(-50%, 60%)
+      
+  .footer_content
+    padding: 20px 20px
+    color: rgba(255,255,255,.5)
+    .social-icon
+      display: inline-block
+      a
+        width: 100%
+        height: 100%
+        padding: 10px 10px
+        cursor: pointer
+        transform: translateY(50%)
+        color: rgba(255,255,255,.5)
+        &:hover
+          color: rgba(255,255,255,1)
+        
+
+    p
+      position: absolute
+      right: 20px
+      bottom: 0px
+
+// footer end ---------------

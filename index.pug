@@ -1,0 +1,175 @@
+//- Slideshow功能：
+//-   1. 點擊左右鍵切換上下張
+//-   2. 點擊錨點直接切換至對應的圖片
+//-   3. 定時自動播放slideshow
+//-   4. 滑鼠移入時暫停播放slideshow
+doctype html
+html(lang='zh-TW')
+  head
+    title SUITBOY Workshop
+    meta(charset="UTF-8")
+        //- 相容性模式
+    meta(http-equiv="X-UA-Compatible" content="IE=edge,chrome=1")
+        //-  相容性模式-end
+    meta(name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no")
+    meta(name='author', content='PIN CHUN PAN')
+    meta(name='copyright', content='Pin Chun Pan ,All Rights Reserved')
+    link(rel="stylesheet", href="css/bootstrap.css")
+    link(rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css')
+    link(rel='stylesheet prefetch' href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300i,700')
+    link(rel="stylesheet" href="css/style.css")
+
+body
+  #header_top
+  header.page-header
+    .logo
+      h3 SUITIBOY
+    .slideshow
+      .slideshow-slides
+        a.slide(href="#")
+          img(src="images/slides_01.jpg", width="1600")
+        a.slide(href="#")
+          img(src="images/slides_02.jpg", width="1600")
+        a.slide(href="#")
+          img(src="images/slides_03.jpg", width="1600")
+        a.slide(href="#")
+          img(src="images/slides_04.jpg", width="1600")
+      .slideshow-content
+        h2.pc_show - Lorem ipsum dolor -
+        h2.m_show - Lorem dolor -
+        p.pc_show Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus sint ullam nobis,Nobis explicabo Aut, neque, exercitationem. Voluptatibus inventore aut facilis!
+        p.m_show Nobis explicabo Aut, neque, exercitationem. Voluptatibus inventore aut facilis!
+      .slideshow-nav
+        a.prev(href="#")
+          i.fa.fa-angle-left
+        a.next(href="#")
+          i.fa.fa-angle-right
+      .slideshow-indicator
+    
+    nav.primary-nav
+      ul
+        li
+          a.scrollAnchor(href="#section_about") ABOUT
+        li
+          a.scrollAnchor(href="#section_product") PRODUCT
+        li
+          a.scrollAnchor(href="#section_custom") CUSTOM
+        li
+          a.scrollAnchor(href="#section_contact") CONTACT
+
+
+  section#section_about
+    h2.title About
+    .about_content 
+      p Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit eum magnam quo velit, eveniet, assumenda aspernatur mollitia accusamus quis iusto illo. Magnam, temporibus incidunt.
+      p Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione facilis illo cupiditate vel obcaecati repellendus necessitatibus quasi, provident commodi amet assumenda? Cumque hic quis perferendis obcaecati, qui nostrum quasi sunt odio culpa cupiditate totam!
+  section#section_product
+    h2.title Product
+    .section_header
+      .inner
+        ul.tabs-nav
+          li
+            a.active(href="#product1") Suits
+          li
+            a(href="#product2") Shirts
+          li
+            a(href="#product3") Shoes
+          li
+            a(href="#product4") Accessories
+        //- 切換頁籤樣式用
+        .tabs-hightlight
+    .section_body
+      .tabs-panel#product1 
+        .image-wrapper
+          img(src="images/product_01.jpg", width="100%")
+        .product-content
+          .inner
+            h3.title Suits
+            p.description div Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde dignissimos commodi labore! Vel, magni incidunt.
+            button.product-btn more
+      .tabs-panel#product2 
+        .image-wrapper
+          img(src="images/product_02.jpg", width="100%")
+        .product-content
+          .inner
+            h3.title Shirts
+            p.description div Lorem ipsum, dolor sit amet consectetur adipisicing elit. Asperiores ad eius obcaecati ratione minus quos!
+            button.product-btn more
+      .tabs-panel#product3 
+        .image-wrapper
+          img(src="images/product_03.jpg", width="100%")
+        .product-content
+          .inner
+            h3.title Shoes
+            p.description div Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos eligendi nulla officia in delectus ad?
+            button.product-btn more
+      .tabs-panel#product4 
+        .image-wrapper
+          img(src="images/product_04.jpg", width="100%")
+        .product-content
+          .inner
+            h3.title Accessories
+            p.description div Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea deserunt molestiae quo excepturi, tempore quisquam.
+            button.product-btn more
+  section#section_custom
+    .container
+      h2.title Custom
+      .row.custom_list
+        .col-md-4.custom_item.custom_item_01
+          h4.custom_item_title Step 1
+          .custom_item_imgbox
+            img(src="images/custom_step1.jpg", alt="")
+          p.custom_item_para Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus, assumenda!
+          a.cta-btn More
+        .col-md-4.custom_item.custom_item_02
+          h4.custom_item_title Step 2
+          .custom_item_imgbox
+            img(src="images/custom_step2.jpg", alt="")
+          p.custom_item_para Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus, assumenda!
+          a.cta-btn More
+        .col-md-4.custom_item.custom_item_03
+          h4.custom_item_title Step 3
+          .custom_item_imgbox
+            img(src="images/custom_step3.jpg", alt="")
+          p.custom_item_para Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus, assumenda!tionem. adipisicing elit. Voluptatibus, assumenda!
+          a.cta-btn More
+
+  section#section_contact
+    h2.title Contact
+    p Feel free to contact us.
+    form.form
+      .input-container
+        input.js-input(type="text" id="name" required)
+        label.label-text(for="name") Name
+      .input-container
+        input.js-input(type="text" id="orderItem" required)
+        label.label-text(for="orderItem") Order Item  
+      .input-container 
+        input.js-input(type="text" id="email" required)
+        label.label-text(for="email") E-mail
+      .input-container
+        input.js-input(type="tel" id="subject" required)
+        label.label-text(for="tel") Phone Number
+      .input-container
+        textarea.js-input(type="text" id="message" required)
+        label.label-text(for="message") Message
+      input.btn(type="submit" value="SEND")
+    
+  footer#footer
+    .top_icon_bg
+      .top_icon
+        i.fa.fa-angle-up
+          a.scrollAnchor(href="#header_top")
+          
+          
+    .footer_content
+      .social-icon
+        a(href="#!")
+          i.fa.fa-facebook
+        a(href="#!")
+          i.fa.fa-instagram
+      p COPYRIGHT&copy;2017 SUITIBOY
+
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+  script(src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js')
+  script(src="js/index.js")
